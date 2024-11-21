@@ -11,12 +11,16 @@ alias d-up='docker-compose up -d'
 alias d-down='docker-compose down'
 alias d-nano='nano docker-compose.yml'
 alias d-edit='nano docker-compose.yml'
-alias l='ls -l'
+alias l='eza -l'
 alias gptpaste='eval "$(zpaste)"'
 alias gptshow='function _run() { "$@" | tee >(zcopy); }; _run'
 alias gptrun='eval "$(zpaste) 2>&1" | tee >(zcopy)'
 alias fd=fdfind
-
+alias ls=eza
+eval $(thefuck --alias)
+eval $(thefuck --alias fk)
+eval "$(zoxide init bash)"
+alias cd=z
 
 exec() {
     docker exec -it "$1" /bin/bash
